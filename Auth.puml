@@ -1,0 +1,72 @@
+@startmindmap
+* Spring Security Advanced Learning
+** Authorization and Access Control
+*** Role-Based Access Control (RBAC)
+**** Define roles and permissions
+**** Use @PreAuthorize and @Secured annotations
+**** Source: https://spring.io/guides/topicals/spring-security-authorization/
+*** URL-based Security
+**** Configure HttpSecurity for URL patterns
+**** Use antMatchers and mvcMatchers
+**** Source: https://docs.spring.io/spring-security/reference/servlet/authorization/
+** JWT and Token-Based Authentication
+*** JWT Basics
+**** Structure: Header, Payload, Signature
+**** Use cases: stateless authentication
+**** Source: https://jwt.io/introduction/
+*** Implementing JWT in Spring
+**** Use filters to validate tokens
+**** Store user details in SecurityContext
+**** Source: https://www.baeldung.com/spring-security-oauth-jwt
+** OAuth2 and OpenID Connect
+*** OAuth2 Basics
+**** Roles: Resource Owner, Client, Authorization Server, Resource Server
+**** Grant types: Authorization Code, Implicit, Client Credentials
+**** Source: https://oauth.net/2/
+*** OpenID Connect
+**** Adds identity layer on OAuth2
+**** Provides user info and authentication
+**** Source: https://openid.net/connect/
+** Method Security with Annotations
+*** @PreAuthorize
+**** Expression-based access control
+**** Example: @PreAuthorize("hasRole('ADMIN')")
+*** @Secured
+**** Role-based method security
+**** Example: @Secured("ROLE_USER")
+*** @PostAuthorize
+**** Checks after method execution
+**** Example: @PostAuthorize("returnObject.owner == authentication.name")
+** Security Testing
+*** Unit Testing
+**** Mock authentication objects
+**** Use @WithMockUser
+**** Source: https://docs.spring.io/spring-security/site/docs/current/reference/html5/#test
+*** Integration Testing
+**** Test security filters and endpoints
+**** Use MockMvc with security
+** Custom Authentication Providers
+*** Creating Custom Provider
+**** Implement AuthenticationProvider interface
+**** Handle custom token or credential types
+*** Use Cases
+**** Multi-factor authentication
+**** External system integration
+** Session Management and CSRF Protection
+*** Session Fixation
+**** Prevent session fixation attacks
+**** Use session management strategies
+*** CSRF Protection
+**** Enable CSRF tokens
+**** Use with state-changing requests
+** Security Best Practices and Hardening
+*** Password Policies
+**** Enforce strong passwords
+**** Use BCrypt with strength factor
+*** Secure Headers
+**** Configure HTTP headers (CSP, HSTS)
+**** Prevent clickjacking and XSS
+*** Logging and Monitoring
+**** Audit security events
+**** Monitor suspicious activities
+@endmindmap

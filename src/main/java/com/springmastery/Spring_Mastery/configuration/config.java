@@ -25,11 +25,11 @@ public class config {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/hello").permitAll()
                         .requestMatchers("/user").permitAll()
-                        .requestMatchers("\"/v3/api-docs/**\", \"/swagger-ui.html\", \"/swagger-ui/**\"").permitAll()
+                        .requestMatchers("/v3/api-docs/**", "/swagger-ui.html", "/swagger-ui/**").permitAll()  .requestMatchers("/test-admin").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .csrf().disable()
-                .formLogin();
+                .httpBasic();
 
         return http.build();
     }
